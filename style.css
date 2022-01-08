@@ -1,0 +1,107 @@
+*, *::before, *::after{
+    margin: auto;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#questionlayout {
+    width: 60vw;
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#contheader, .qbody, .qsubmit{
+    grid-column: 1 / span 2;
+}
+
+#contheader{
+    font-size: 4vw;
+    margin-bottom: 40px;
+    margin-top: 15vh;
+}
+
+.qbody{
+    background-color:yellow ;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    width: 100%;
+    font-size: 2vw;
+}
+
+.qbody > button {
+    border: none;
+}
+
+.qbody > button:hover {
+    background-color: rgb(107, 112, 133);
+    color: white;
+    transform: translateY(-5px)
+}
+
+#contheader, .qheader, .qques{
+    grid-column: 1 / span 2;
+}
+
+.qheader, .qques, .qsubmit{
+    padding: 15px;
+
+}
+
+.qsubmit{
+    background-color: azure;
+    font-size: 2vw;
+}
+
+.qheader, .qques{
+    width: 100%;
+}
+
+.qheader{
+    font-size: 2vw;
+}
+
+.qques{
+    font-size: 3vw;
+}
+
+.qsubmit{
+    width: 60%;
+    background-color: rgb(140, 222, 255);
+}
+
+.qansw{
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    font-size: 2vw;
+}
+
+.odd{
+    background-color: rgb(140, 222, 255);
+}
+
+.even{
+    background-color: rgb(144, 180, 214);
+}
+
+@media screen and (max-width: 600px){
+    .qansw{
+        grid-column: 1/ span 2;
+    }
+
+    #questionlayout{
+        width: 80vw;
+    }
+
+
+}

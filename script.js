@@ -1,40 +1,36 @@
-const quizQuestions = [
-    {
-        Qnumber: 1,
-        Qquestion: "food",
-        Qanswer1: "Bananas",
-        Qanswer2: "Chocolate",
-        Qanswer3: "Chicken",
-        Qanswer4: "Pizza"
-    },
+class Question {
+    constructor(Qnumber, Qques, Qans1, Qans2, Qans3, Qans4) {
+        this.QuestionNumber = Qnumber;
+        this.Qquestion = Qques;
+        this.AnswerOne = Qans1;
+        this.AnswerTwo = Qans2;
+        this.AnswerThree = Qans3;
+        this.AnswerFour = Qans4;
+        this.QuestionLayout = function() {
+           return "<div class=\"qbody\"> <div class=\"qheader\"><h3>Question "+ this.QuestionNumber +"</h3></div>" +
+           "<div class=\"qques\">What is your favorite "+ this.Qquestion +"</div>" +
+           "<button class=\"qansw even\">"+ this.AnswerOne +"</button>" +
+           "<button class=\"qansw odd\">"+ this.AnswerTwo +"</button>" +
+           "<button class=\"qansw odd\">"+ this.AnswerThree +"</button>" +
+           "<button class=\"qansw even\">"+ this.AnswerFour +"</button>" +
+           "<button class=\"qsubmit\">submit</button>" +
+            "</div><br>"};
+    }
+}
 
-    {
-        Qnumber: 2, 
-        Qquestion: "color?",
-        Qanswer1: "red",
-        Qanswer2: "green",
-        Qanswer3: "silver",
-        Qanswer4: "purple"
-    },
+const questions = [];
 
-    {
-        Qnumber: 3, 
-        Qquestion: "animal",
-        Qanswer1: "cat",
-        Qanswer2: "dog",
-        Qanswer3: "rabbit",
-        Qanswer4: "snake"
-    },
+const question1 = new Question("1", "color", "red", "green", "blue", "orange");
+const question2 = new Question("2", "food", "chicken", "pot pie", "cake", "brussel sprouts");
+const question3 = new Question("3", "animal", "cat", "dog", "bird", "frog");
+const question4 = new Question("4", "country", "Japan", "London", "China", "America");
 
-    {
-        Qnumber: 4,
-        Qquestion: "number",
-        Qanswer1: "1",
-        Qanswer2: "2",
-        Qanswer3: "3",
-        Qanswer4: "4"
-    },
+questions.push(question1.QuestionLayout());
+questions.push(question2.QuestionLayout());
+questions.push(question3.QuestionLayout());
+questions.push(question4.QuestionLayout());
 
-    
-]
+const questionlayout = document.getElementById("questionlayout");
+
+questionlayout.innerHTML = questions[0];
 
