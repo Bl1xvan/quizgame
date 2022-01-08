@@ -14,10 +14,9 @@ class Question {
            "<button class=\"qansw odd\">"+ this.AnswerThree +"</button>" +
            "<button class=\"qansw even\">"+ this.AnswerFour +"</button>" +
            "<button class=\"qsubmit\">submit</button>" +
-            "</div><br>"};
+            "</div>"};
     }
 }
-
 const questions = [];
 
 const question1 = new Question("1", "color", "red", "green", "blue", "orange");
@@ -32,5 +31,27 @@ questions.push(question4.QuestionLayout());
 
 const questionlayout = document.getElementById("questionlayout");
 
-questionlayout.innerHTML = questions[0];
+questionlayout.innerHTML = questions.reverse();
+
+const submitplus = document.querySelectorAll(".qsubmit");
+
+submitplus.forEach(box =>{box.addEventListener("click", nextBox)})
+
+function nextBox(e){
+    let box = e.target.parentElement;
+    box.style.display = "none";
+}
+
+
+
+///Maybe don't use forEach with ClassName?
+
+
+
+
+
+
+
+
+
 
