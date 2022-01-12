@@ -13,7 +13,7 @@ class Question {
            "<button class=\"qansw odd\">"+ this.AnswerTwo +"</button>" +
            "<button class=\"qansw odd\">"+ this.AnswerThree +"</button>" +
            "<button class=\"qansw even\">"+ this.AnswerFour +"</button>" +
-           "<button class=\"qsubmit\">submit</button>" +
+           "<button class=\"qsubmit\" disabled>submit</button>" +
             "</div>"};
     }
 }
@@ -37,14 +37,30 @@ const submitplus = document.querySelectorAll(".qsubmit");
 
 submitplus.forEach(box =>{box.addEventListener("click", nextBox)})
 
-function nextBox(e){
-    let box = e.target.parentElement;
-    box.style.display = "none";
+
+
+const answers = document.querySelectorAll(".qansw");
+
+answers.forEach(answer =>{answer.addEventListener("click", chooseAnswer)});
+
+const answerlog = [];
+let answertoPush;
+
+function chooseAnswer(e){
+    e.target.parentElement.lastChild.removeAttribute("disabled");
+    const chosenAnswer = e.target.innerText;
+    answertoPush = chosenAnswer;  
+    console.log(answertoPush);
 }
 
+function nextBox(){
+    answerlog.push(answertoPush);
+    console.log(answerlog);
+    const box = this.parentElement;
+    box.style.display = "none";
 
+}
 
-///Maybe don't use forEach with ClassName?
 
 
 
