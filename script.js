@@ -13,7 +13,7 @@ class Question {
            "<button class=\"qansw odd\">"+ this.AnswerTwo +"</button>" +
            "<button class=\"qansw odd\">"+ this.AnswerThree +"</button>" +
            "<button class=\"qansw even\">"+ this.AnswerFour +"</button>" +
-           "<button class=\"qsubmit\" disabled>submit</button>" +
+           "<button class=\"qsubmit\"> disabled>submit</button>" +
             "</div>"};
     }
 }
