@@ -41,18 +41,26 @@
     top: 0;
 }
 
-.qbody > button {
-    border: none;
-}
-
 .active {
     background-color: rgb(218, 92, 184);
     color: white;
     transform: translateY(-5px);
 }
 
+.qansw:not(.active){
+    background-color: rgb(88, 196, 196);
+}
 
-.qbody > button:hover {
+.disabled{
+    background-color:rgb(153, 153, 153);
+    cursor: not-allowed;
+}
+
+.enabled{
+    background-color: rgb(140, 222, 255);
+}
+
+.qansw:not(.active):hover, .qsubmit.enabled:hover {
     background-color: rgb(107, 112, 133);
     color: white;
     transform: translateY(-5px);
@@ -69,8 +77,8 @@
 }
 
 .qsubmit{
-    background-color: azure;
     font-size: 2vw;
+    width: 60%;
 }
 
 .qheader, .qques{
@@ -85,10 +93,6 @@
     font-size: 3vw;
 }
 
-.qsubmit{
-    width: 60%;
-    background-color: rgb(140, 222, 255);
-}
 
 .qansw{
     text-align: center;

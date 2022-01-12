@@ -13,11 +13,14 @@ class Question {
            "<button class=\"qansw odd\">"+ this.AnswerTwo +"</button>" +
            "<button class=\"qansw odd\">"+ this.AnswerThree +"</button>" +
            "<button class=\"qansw even\">"+ this.AnswerFour +"</button>" +
-           "<button class=\"qsubmit\" disabled>submit</button>" +
+           "<button class=\"qsubmit disabled\" disabled>submit</button>" +
             "</div>"};
-    }
+        }
 }
 const questions = [];
+const score = new Map();
+
+////Can't put in constructor, too many parameters
 
 const question1 = new Question("1", "color", "red", "green", "blue", "orange");
 const question2 = new Question("2", "food", "chicken", "pot pie", "cake", "brussel sprouts");
@@ -28,6 +31,29 @@ questions.push(question1.QuestionLayout());
 questions.push(question2.QuestionLayout());
 questions.push(question3.QuestionLayout());
 questions.push(question4.QuestionLayout());
+
+score.set(question1.AnswerOne, 1);
+score.set(question1.AnswerTwo, 3);
+score.set(question1.AnswerThree, 4);
+score.set(question1.AnswerFour, 2);
+score.set(question2.AnswerOne, 1);
+score.set(question2.AnswerTwo, 3);
+score.set(question2.AnswerThree, 4);
+score.set(question2.AnswerFour, 2);
+score.set(question3.AnswerOne, 1);
+score.set(question3.AnswerTwo, 3);
+score.set(question3.AnswerThree, 4);
+score.set(question3.AnswerFour, 2);
+score.set(question4.AnswerOne, 1);
+score.set(question4.AnswerTwo, 3);
+score.set(question4.AnswerThree, 4);
+score.set(question4.AnswerFour, 2);
+
+
+/////Recall how to make a new branch, the go back to javascript prototypes. Namely Person.prototype.name
+////Possibly do Questions.prototype.scores(a, b, c, d){score.set(this.AnswerOne, a)...and so forth}
+////followed by question1.scores(1, 3, 4, 2); Instead of that freaking wall right there ;__;git
+console.log(score)
 
 const questionlayout = document.getElementById("questionlayout");
 
@@ -46,6 +72,8 @@ let answertoPush;
 
 function chooseAnswer(){
     this.parentElement.lastChild.removeAttribute("disabled");
+    this.parentElement.lastChild.classList.remove("disabled");
+    this.parentElement.lastChild.classList.add("enabled");
     for(let x of answers){
         x.classList.remove("active");
     }
@@ -63,8 +91,8 @@ function nextBox(){
 }
 
 
-
-
+////Scoring System
+////Picture at the end
 
 
 
