@@ -48,7 +48,7 @@ score.set(question4.AnswerOne, 1);
 score.set(question4.AnswerTwo, 3);
 score.set(question4.AnswerThree, 4);
 score.set(question4.AnswerFour, 2);
-
+/////One more time!
 
 /////Recall how to make a new branch, the go back to javascript prototypes. Namely Person.prototype.name
 ////Possibly do Questions.prototype.scores(a, b, c, d){score.set(this.AnswerOne, a)...and so forth}
