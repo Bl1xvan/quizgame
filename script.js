@@ -37,8 +37,6 @@ const submitplus = document.querySelectorAll(".qsubmit");
 
 submitplus.forEach(box =>{box.addEventListener("click", nextBox)})
 
-
-
 const answers = document.querySelectorAll(".qansw");
 
 answers.forEach(answer =>{answer.addEventListener("click", chooseAnswer)});
@@ -46,9 +44,13 @@ answers.forEach(answer =>{answer.addEventListener("click", chooseAnswer)});
 const answerlog = [];
 let answertoPush;
 
-function chooseAnswer(e){
-    e.target.parentElement.lastChild.removeAttribute("disabled");
-    const chosenAnswer = e.target.innerText;
+function chooseAnswer(){
+    this.parentElement.lastChild.removeAttribute("disabled");
+    for(let x of answers){
+        x.classList.remove("active");
+    }
+    this.classList.add("active");
+    const chosenAnswer = this.innerText;
     answertoPush = chosenAnswer;  
     console.log(answertoPush);
 }
@@ -58,7 +60,6 @@ function nextBox(){
     console.log(answerlog);
     const box = this.parentElement;
     box.style.display = "none";
-
 }
 
 
