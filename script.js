@@ -64,6 +64,8 @@ let answertoPush;
 
 function chooseAnswer(){
     this.parentElement.lastChild.removeAttribute("disabled");
+    this.parentElement.lastChild.classList.remove("disabled");
+    this.parentElement.lastChild.classList.add("enabled");
     for(let x of answers){
         x.classList.remove("active");
     }
