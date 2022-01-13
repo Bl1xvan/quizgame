@@ -15,7 +15,7 @@ class Question {
            "<button class=\"qansw even\">"+ this.AnswerFour +"</button>" +
            "<button class=\"qsubmit disabled\" disabled>submit</button>" +
             "</div>"};
-    }
+        }
 }
 
 Question.prototype.fourScores = function(a, b, c, d){
@@ -29,6 +29,8 @@ Question.prototype.fourScores = function(a, b, c, d){
 ////followed by question1.scores(1, 3, 4, 2); Instead of that freaking wall right there ;__;git
 const questions = [];
 const score = new Map();
+
+////Can't put in constructor, too many parameters
 
 const question1 = new Question("1", "color", "red", "green", "blue", "orange");
 const question2 = new Question("2", "food", "chicken", "pot pie", "cake", "brussel sprouts");
@@ -46,6 +48,13 @@ questions.push(question1.QuestionLayout());
 questions.push(question2.QuestionLayout());
 questions.push(question3.QuestionLayout());
 questions.push(question4.QuestionLayout());
+
+
+/////One more time!
+
+/////Recall how to make a new branch, the go back to javascript prototypes. Namely Person.prototype.name
+////Possibly do Questions.prototype.scores(a, b, c, d){score.set(this.AnswerOne, a)...and so forth}
+////followed by question1.scores(1, 3, 4, 2); Instead of that freaking wall right there ;__;git
 
 const questionlayout = document.getElementById("questionlayout");
 
@@ -74,7 +83,7 @@ function chooseAnswer(){
     answertoPush = chosenAnswer;  
     console.log(answertoPush);
 }
-gi
+
 function nextBox(){
     answerlog.push(answertoPush);
     console.log(answerlog);
@@ -83,8 +92,8 @@ function nextBox(){
 }
 
 
-
-
+////Scoring System
+////Picture at the end
 
 
 
