@@ -74,7 +74,7 @@ function chooseAnswer(){
     answertoPush = chosenAnswer;  
     console.log(answertoPush);
 }
-
+gi
 function nextBox(){
     answerlog.push(answertoPush);
     console.log(answerlog);
