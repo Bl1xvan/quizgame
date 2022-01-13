@@ -13,16 +13,34 @@ class Question {
            "<button class=\"qansw odd\">"+ this.AnswerTwo +"</button>" +
            "<button class=\"qansw odd\">"+ this.AnswerThree +"</button>" +
            "<button class=\"qansw even\">"+ this.AnswerFour +"</button>" +
-           "<button class=\"qsubmit\"> disabled>submit</button>" +
+           "<button class=\"qsubmit disabled\" disabled>submit</button>" +
             "</div>"};
     }
 }
+
+Question.prototype.fourScores = function(a, b, c, d){
+    score.set(this.AnswerOne, a);
+    score.set(this.AnswerTwo, b);
+    score.set(this.AnswerThree, c);
+    score.set(this.AnswerFour, d);
+}
+/////Recall how to make a new branch, the go back to javascript prototypes. Namely Person.prototype.name
+////Possibly do Questions.prototype.scores(a, b, c, d){score.set(this.AnswerOne, a)...and so forth}
+////followed by question1.scores(1, 3, 4, 2); Instead of that freaking wall right there ;__;git
 const questions = [];
+const score = new Map();
 
 const question1 = new Question("1", "color", "red", "green", "blue", "orange");
 const question2 = new Question("2", "food", "chicken", "pot pie", "cake", "brussel sprouts");
 const question3 = new Question("3", "animal", "cat", "dog", "bird", "frog");
 const question4 = new Question("4", "country", "Japan", "London", "China", "America");
+
+question1.fourScores(1, 2, 3, 4);
+question2.fourScores(4, 2, 3, 1);
+question3.fourScores(4, 1, 3, 2);
+question4.fourScores(3, 2, 1, 4);
+
+console.log(score);
 
 questions.push(question1.QuestionLayout());
 questions.push(question2.QuestionLayout());
