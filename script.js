@@ -32,22 +32,7 @@ questions.push(question2.QuestionLayout());
 questions.push(question3.QuestionLayout());
 questions.push(question4.QuestionLayout());
 
-score.set(question1.AnswerOne, 1);
-score.set(question1.AnswerTwo, 3);
-score.set(question1.AnswerThree, 4);
-score.set(question1.AnswerFour, 2);
-score.set(question2.AnswerOne, 1);
-score.set(question2.AnswerTwo, 3);
-score.set(question2.AnswerThree, 4);
-score.set(question2.AnswerFour, 2);
-score.set(question3.AnswerOne, 1);
-score.set(question3.AnswerTwo, 3);
-score.set(question3.AnswerThree, 4);
-score.set(question3.AnswerFour, 2);
-score.set(question4.AnswerOne, 1);
-score.set(question4.AnswerTwo, 3);
-score.set(question4.AnswerThree, 4);
-score.set(question4.AnswerFour, 2);
+
 /////One more time!
 
 /////Recall how to make a new branch, the go back to javascript prototypes. Namely Person.prototype.name
