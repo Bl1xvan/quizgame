@@ -18,19 +18,20 @@ class Question {
         }
 }
 
+const questions = [];
+let answerlog = 0;
+const score = new Map();
+const questionlayout = document.getElementById("questionlayout");
+let answertoPush;
+
+////Maybe do something to score Map itself???
+
 Question.prototype.fourScores = function(a, b, c, d){
     score.set(this.AnswerOne, a);
     score.set(this.AnswerTwo, b);
     score.set(this.AnswerThree, c);
     score.set(this.AnswerFour, d);
 }
-/////Recall how to make a new branch, the go back to javascript prototypes. Namely Person.prototype.name
-////Possibly do Questions.prototype.scores(a, b, c, d){score.set(this.AnswerOne, a)...and so forth}
-////followed by question1.scores(1, 3, 4, 2); Instead of that freaking wall right there ;__;git
-const questions = [];
-const score = new Map();
-
-////Can't put in constructor, too many parameters
 
 const question1 = new Question("1", "color", "red", "green", "blue", "orange");
 const question2 = new Question("2", "food", "chicken", "pot pie", "cake", "brussel sprouts");
@@ -43,33 +44,26 @@ question3.fourScores(4, 1, 3, 2);
 question4.fourScores(3, 2, 1, 4);
 
 console.log(score);
+const paragraph = "<div class=\"qbody\"><div class=\"qques\">Here's Your Result!</div>"
+                    + "<div id=\"holdimage\"><h3 id=\"imagename\"></h3>"
+                    + "<img id=\"imgresult\" src=\"images/triangle.png\" alt=\"triangle\">" +
+                        "</div></div>";
+
 
 questions.push(question1.QuestionLayout());
 questions.push(question2.QuestionLayout());
 questions.push(question3.QuestionLayout());
 questions.push(question4.QuestionLayout());
-
-
-/////One more time!
-
-/////Recall how to make a new branch, the go back to javascript prototypes. Namely Person.prototype.name
-////Possibly do Questions.prototype.scores(a, b, c, d){score.set(this.AnswerOne, a)...and so forth}
-////followed by question1.scores(1, 3, 4, 2); Instead of that freaking wall right there ;__;git
-
-const questionlayout = document.getElementById("questionlayout");
+questions.push(paragraph);
 
 questionlayout.innerHTML = questions.reverse();
-
 const submitplus = document.querySelectorAll(".qsubmit");
-
 submitplus.forEach(box =>{box.addEventListener("click", nextBox)})
-
 const answers = document.querySelectorAll(".qansw");
-
 answers.forEach(answer =>{answer.addEventListener("click", chooseAnswer)});
 
-const answerlog = [];
-let answertoPush;
+const imgresult = document.getElementById("imgresult");
+const imagename = document.getElementById("imagename");
 
 function chooseAnswer(){
     this.parentElement.lastChild.removeAttribute("disabled");
@@ -80,20 +74,39 @@ function chooseAnswer(){
     }
     this.classList.add("active");
     const chosenAnswer = this.innerText;
-    answertoPush = chosenAnswer;  
-    console.log(answertoPush);
+    answertoPush = score.get(chosenAnswer);
+}
+
+function finalimage(x){
+    if(x > 0 && x <= 4){
+        return "circle";
+    }
+    if(x > 4 && x <= 8){
+        return "triangle";
+    }
+    if(x > 8 && x <= 12){
+        return "square";
+    }
+    if(x > 12 && x <= 16){
+        return "star";
+    }
 }
 
 function nextBox(){
-    answerlog.push(answertoPush);
-    console.log(answerlog);
+    answerlog += answertoPush;
     const box = this.parentElement;
     box.style.display = "none";
+    let image = finalimage(answerlog);
+    imgresult.setAttribute("src", "images/" + image + ".png");
+    imgresult.setAttribute("alt", image);
+    imagename.innerText = image;
 }
 
 
-////Scoring System
-////Picture at the end
+///FINALLY! Just need to put some images in and I'll be all set!
+
+
+
 
 
 

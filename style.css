@@ -101,6 +101,19 @@
     font-size: 2vw;
 }
 
+#holdimage{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / span 2;
+}
+
+#imgresult{
+    height: 30vh;
+    width: auto;
+}
+
+
 @media screen and (max-width: 600px){
     .qansw{
         grid-column: 1/ span 2;
