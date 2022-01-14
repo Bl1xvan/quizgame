@@ -46,7 +46,7 @@ question4.fourScores(3, 2, 1, 4);
 console.log(score);
 const paragraph = "<div class=\"qbody\"><div class=\"qques\">Here's Your Result!</div>"
                     + "<div id=\"holdimage\"><h3 id=\"imagename\"></h3>"
-                    + "<img id=\"imgresult\" src=\"images/triangle.png\" alt=\"triangle\">" +
+                    + "<img id=\"imgresult\">" +
                         "</div></div>";
 
 
